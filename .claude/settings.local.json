@@ -10,7 +10,16 @@
       "Bash(mkdir -p /tmp/portfolio-backup)",
       "Bash(cp portfolio-blueprint.md RIFAT-HOSEN.pdf /tmp/portfolio-backup/)",
       "Bash(rm portfolio-blueprint.md RIFAT-HOSEN.pdf)",
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --turbopack --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --turbopack --yes)",
+      "Bash(cp /tmp/portfolio-backup/RIFAT-HOSEN.pdf public/resume.pdf)",
+      "Bash(cp /tmp/portfolio-backup/portfolio-blueprint.md .)",
+      "Bash(bun add:*)",
+      "Bash(bun run:*)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(npx next:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
