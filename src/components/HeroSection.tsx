@@ -7,19 +7,21 @@ import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 /* ── Data ── */
 const taglines = [
   "Full Stack Developer",
-  "Flutter Expert",
-  "Problem Solver",
-  "AI Enthusiast",
+  "Building with Next.js & Convex",
+  "Flutter Mobile Expert",
+  "AI-Powered Solutions Creator",
 ];
 
 const stats: { label: string; value: number }[] = [
-  { label: "Problems Solved", value: 1000 },
-  { label: "Projects Built", value: 10 },
-  { label: "Years Experience", value: 2 },
+  { label: "Next.js Projects Built", value: 8 },
+  { label: "Convex Projects Built", value: 5 },
+  { label: "Flutter Mobile Apps", value: 2 },
+  { label: "Years Experience", value: 4 },
 ];
 
 /* ── Helpers ── */
-const formatStat = (value: number) => (value >= 1000 ? `${value}+` : `${value}`);
+const formatStat = (value: number) =>
+  value >= 1000 ? `${value}+` : `${value}`;
 
 /* ── Count-up hook ── */
 function useCountUp(target: number, duration = 2000) {
@@ -47,7 +49,10 @@ function useCountUp(target: number, duration = 2000) {
     };
 
     rafId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(rafId);
+    return () => {
+      cancelAnimationFrame(rafId);
+      started.current = false;
+    };
   }, [target, duration]);
 
   return count;
@@ -131,17 +136,14 @@ const HeroSection = () => {
     return () => cancelAnimationFrame(rafRef.current);
   }, [lerpLoop]);
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      setMousePos({
-        x: (e.clientX - rect.left) / rect.width,
-        y: (e.clientY - rect.top) / rect.height,
-      });
-    },
-    []
-  );
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    setMousePos({
+      x: (e.clientX - rect.left) / rect.width,
+      y: (e.clientY - rect.top) / rect.height,
+    });
+  }, []);
 
   /* ── Framer Motion variants ── */
   const container = {
@@ -218,11 +220,11 @@ const HeroSection = () => {
 
         {/* Greeting */}
         <motion.div variants={fadeUp}>
-          <p className="text-lg md:text-xl text-slate-400 mb-2">Hello, I&apos;m</p>
+          <p className="text-lg md:text-xl text-slate-400 mb-2">
+            Hello, I&apos;m
+          </p>
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-            <span
-              className="bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent"
-            >
+            <span className="bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
               Rifat Hosen
             </span>
           </h1>
@@ -234,9 +236,7 @@ const HeroSection = () => {
           className="mt-4 text-xl md:text-2xl text-slate-300"
         >
           I&apos;m a{" "}
-          <span className="text-emerald-400 font-semibold">
-            {currentText}
-          </span>
+          <span className="text-emerald-400 font-semibold">{currentText}</span>
           <span className="animate-pulse text-emerald-400 ml-0.5">|</span>
         </motion.p>
 
@@ -245,9 +245,10 @@ const HeroSection = () => {
           variants={fadeUp}
           className="mt-6 text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto"
         >
-          Passionate software engineer crafting innovative solutions with
-          Next.js, Flutter, and AI technologies. Turning complex problems into
-          elegant, user-friendly applications.
+          Full-stack developer building scalable, user-focused applications with
+          Next.js, Convex, and Flutter. Passionate about integrating
+          AI—especially RAG-based chatbots—to create smart, efficient solutions
+          that turn complex ideas into seamless digital experiences.
         </motion.p>
 
         {/* Stats */}
@@ -275,7 +276,6 @@ const HeroSection = () => {
           </a>
         </motion.div>
       </motion.div>
-
     </section>
   );
 };

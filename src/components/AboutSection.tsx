@@ -2,37 +2,51 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Code2, Brain, Rocket, type LucideIcon } from "lucide-react";
+import {
+  GraduationCap,
+  Code2,
+  Brain,
+  Rocket,
+  Briefcase,
+  Layers,
+  type LucideIcon,
+} from "lucide-react";
 
 const highlights: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    icon: GraduationCap,
-    title: "B.Sc. in CSE",
-    description: "University of Rajshahi — Computer Science & Engineering",
+    icon: Code2,
+    title: "Full Stack Engineer",
+    description:
+      "Building end-to-end applications with Next.js, Convex, and Flutter",
   },
   {
-    icon: Code2,
-    title: "Full Stack Dev",
-    description: "Next.js, Flutter, Node.js — building end-to-end solutions",
+    icon: Briefcase,
+    title: "Senior Software Engineer",
+    description: "Working remotely at KI2 | KI-Quadrat Systemhaus GmbH",
+  },
+  {
+    icon: Layers,
+    title: "Project Experience",
+    description:
+      "8+ Next.js apps, 5+ Convex backends, and 2+ Flutter mobile apps",
   },
   {
     icon: Brain,
-    title: "1000+ Problems",
-    description:
-      "Competitive programming across Codeforces, LeetCode & more",
-  },
-  {
-    icon: Rocket,
-    title: "AI & Innovation",
-    description:
-      "Building AI assistants, speech recognition & ML projects",
+    title: "AI Systems",
+    description: "Developing RAG-based chatbots and intelligent applications",
   },
 ];
 
+// const bio = [
+//   "I'm a Full Stack Software Engineer from Bangladesh with a B.Sc. in Computer Science and Engineering from the University of Rajshahi. Currently working remotely as a Senior Software Engineer at KI2 | KI-Quadrat Systemhaus GmbH, where I build scalable and innovative digital solutions.",
+//   "I specialize in full-stack web development with Next.js and Convex, cross-platform mobile app development with Flutter, and AI-powered applications including RAG-based chatbots. I focus on creating efficient, user-centric products that solve real-world problems.",
+//   "Previously, I worked at Bizzntek Ltd. in Uttara, Dhaka, where I contributed as a Junior Software Engineer and earlier as a Software Engineer Intern, working with Flutter (MVVM), Angular, and modern JavaScript technologies.",
+// ];
+
 const bio = [
-  "I'm a passionate Full Stack Software Engineer from Bangladesh with a B.Sc. in Computer Science and Engineering from the University of Rajshahi. Currently working as a Jr. Software Engineer at Dr. Reckendorfer Consulting, where I build innovative web and mobile solutions.",
-  "My journey in tech spans across full-stack web development with Next.js, cross-platform mobile apps with Flutter, and AI-powered applications. I thrive on solving complex problems — having tackled over 1,000 challenges across competitive programming platforms including Codeforces, LeetCode, and UVA Online Judge.",
-  "I believe in writing clean, efficient code and continuously pushing the boundaries of what's possible with modern technology.",
+  "Full Stack Software Engineer from Bangladesh, currently working remotely as a Senior Software Engineer at KI2 | KI-Quadrat Systemhaus GmbH.",
+  "I build scalable web, mobile, and AI-powered applications using Next.js, Convex, Flutter, and RAG-based systems.",
+  "With 4+ years of experience, I have developed 8+ Next.js projects, 5+ Convex backends, and 2+ Flutter mobile apps, focusing on performance, scalability, and user experience.",
 ];
 
 function HighlightCard({
@@ -79,7 +93,7 @@ function HighlightCard({
     >
       <div
         ref={cardRef}
-        className="glass holographic-card p-6 text-center transition-transform duration-200 ease-out"
+        className="glass holographic-card p-6 text-center transition-transform duration-200 ease-out h-64 flex flex-col items-center justify-center"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >

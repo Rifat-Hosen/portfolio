@@ -19,7 +19,9 @@
       "Bash(pkill -f \"next dev\")",
       "Bash(pkill -f \"next-server\")",
       "Bash(npx next:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const lucide = require\\(''lucide-react''\\); console.log\\(''GraduationCap:'', !!lucide.GraduationCap\\); console.log\\(''Code2:'', !!lucide.Code2\\); console.log\\(''Brain:'', !!lucide.Brain\\); console.log\\(''Rocket:'', !!lucide.Rocket\\);\")",
+      "Bash(node -e \"const lucide = require\\(''lucide-react''\\); const icons = [''GraduationCap'',''Code2'',''Brain'',''Rocket'']; icons.forEach\\(i => console.log\\(i + '':'', typeof lucide[i]\\)\\);\")"
     ]
   }
 }
