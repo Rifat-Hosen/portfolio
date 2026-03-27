@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
   { label: "Education", id: "education" },
+  { label: "Experience", id: "experience" },
   { label: "Skills", id: "skills" },
   { label: "Activities", id: "activities" },
   { label: "Contact", id: "contact" },
@@ -42,7 +43,7 @@ export default function Navbar() {
             setActiveSection(id);
           }
         },
-        { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
+        { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" },
       );
 
       observer.observe(element);

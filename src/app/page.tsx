@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
 import ContactSection from "@/components/ContactSection";
@@ -18,6 +19,9 @@ const SkillsScene = dynamic(() => import("@/components/SkillsScene"), {
   ssr: false,
 });
 const EducationScene = dynamic(() => import("@/components/EducationScene"), {
+  ssr: false,
+});
+const ExperienceScene = dynamic(() => import("@/components/ExperienceScene"), {
   ssr: false,
 });
 const ContactScene = dynamic(() => import("@/components/ContactScene"), {
@@ -58,6 +62,16 @@ export default function Home() {
           <EducationScene />
         </div>
         <EducationSection />
+      </div>
+
+      <div className="section-divider" />
+
+      {/* Experience */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-25">
+          <ExperienceScene />
+        </div>
+        <ExperienceSection />
       </div>
 
       <div className="section-divider" />
