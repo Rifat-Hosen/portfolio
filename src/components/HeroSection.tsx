@@ -62,8 +62,8 @@ function useCountUp(target: number, duration = 2000) {
 function StatCard({ label, value }: { label: string; value: number }) {
   const count = useCountUp(value, 2000);
   return (
-    <div className="glass px-6 py-5 text-center min-w-[140px] flex-1">
-      <p className="text-3xl md:text-4xl font-bold text-emerald-400">
+    <div className="glass px-5 py-4 text-center min-w-[120px] md:min-w-[200px] flex-1">
+      <p className="text-2xl md:text-3xl font-bold text-emerald-400">
         {formatStat(count)}
       </p>
       <p className="text-sm text-slate-400 mt-1">{label}</p>
@@ -170,7 +170,7 @@ const HeroSection = () => {
       id="home"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-18"
     >
       {/* ── Background gradient glow ── */}
       <div
@@ -223,7 +223,7 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-slate-400 mb-2">
             Hello, I&apos;m
           </p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
             <span className="bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
               Rifat Hosen
             </span>
@@ -233,9 +233,9 @@ const HeroSection = () => {
         {/* Typewriter */}
         <motion.p
           variants={fadeUp}
-          className="mt-4 text-xl md:text-2xl text-slate-300"
+          className="mt-3 text-lg md:text-xl text-slate-300"
         >
-          I&apos;m {" "}
+          I&apos;m{" "}
           <span className="text-emerald-400 font-semibold">{currentText}</span>
           <span className="animate-pulse text-emerald-400 ml-0.5">|</span>
         </motion.p>
@@ -243,7 +243,7 @@ const HeroSection = () => {
         {/* Intro paragraph */}
         <motion.p
           variants={fadeUp}
-          className="mt-6 text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto"
+          className="mt-5 text-sm md:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto"
         >
           Full-stack developer building scalable, user-focused applications with
           Next.js, Convex, and Flutter. Passionate about integrating
@@ -254,7 +254,7 @@ const HeroSection = () => {
         {/* Stats */}
         <motion.div
           variants={fadeUp}
-          className="mt-10 flex flex-wrap justify-center gap-4 md:gap-6"
+          className="mt-8 flex flex-wrap justify-center gap-3 md:gap-5"
         >
           {stats.map((stat) => (
             <StatCard key={stat.label} label={stat.label} value={stat.value} />
@@ -264,7 +264,7 @@ const HeroSection = () => {
         {/* CTA buttons */}
         <motion.div
           variants={fadeUp}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <a href="#contact" className="btn-primary">
             Get In Touch

@@ -126,13 +126,13 @@ export default function ActivitiesSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="activities" ref={sectionRef} className="py-24 md:py-32">
+    <section id="activities" ref={sectionRef} className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="section-label">PROJECTS & ACTIVITIES</span>
           <h2 className="section-heading">What I&apos;ve Built</h2>

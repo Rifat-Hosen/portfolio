@@ -79,7 +79,7 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-24 md:py-32 relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
     >
       {/* 3D Background Scene — ContactScene will be loaded here */}
       <div className="absolute inset-0 z-0 opacity-20" />
@@ -99,7 +99,7 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-slate-400 max-w-2xl mx-auto text-center mb-16"
+          className="text-slate-400 max-w-2xl mx-auto text-center mb-12"
         >
           Have a project in mind or want to collaborate? I&apos;d love to hear
           from you.

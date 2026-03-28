@@ -93,7 +93,7 @@ function HighlightCard({
     >
       <div
         ref={cardRef}
-        className="glass holographic-card p-6 text-center transition-transform duration-200 ease-out h-64 flex flex-col items-center justify-center"
+        className="glass holographic-card p-5 text-center transition-transform duration-200 ease-out h-full flex flex-col items-center justify-center"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
@@ -115,7 +115,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="w-full py-24 md:py-32 relative overflow-hidden"
+      className="w-full py-16 md:py-24 relative overflow-hidden"
     >
       {/* 3D Background Scene — AboutScene will be loaded here */}
       <div className="absolute inset-0 z-0 opacity-30" />
@@ -125,7 +125,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="section-label">ABOUT ME</span>
           <h2 className="section-heading">Who I Am</h2>
@@ -135,7 +135,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           {bio.map((paragraph, i) => (
             <p

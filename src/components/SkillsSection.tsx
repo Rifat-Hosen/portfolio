@@ -236,7 +236,7 @@ export default function SkillsSection() {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-24 md:py-32 relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
     >
       {/* Placeholder for SkillsScene 3D background */}
       <div className="absolute inset-0 z-0 opacity-20" />
@@ -247,7 +247,7 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="section-label">SKILLS</span>
           <h2 className="section-heading">What I Work With</h2>
@@ -258,7 +258,7 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
+          className="mb-12"
         >
           <h3 className="text-xl font-semibold text-white mb-8 text-center">
             Technical Stack

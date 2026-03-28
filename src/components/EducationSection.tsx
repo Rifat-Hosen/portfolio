@@ -103,7 +103,7 @@ export default function EducationSection() {
     <section
       id="education"
       ref={sectionRef}
-      className="py-24 md:py-32 relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
     >
       {/* Floating geometric decorations */}
       <div
@@ -134,7 +134,7 @@ export default function EducationSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="section-label">EDUCATION</span>
           <h2 className="section-heading">My Journey</h2>
