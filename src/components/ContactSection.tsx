@@ -2,7 +2,14 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send, ExternalLink, type LucideIcon } from "lucide-react";
+import {
+  Mail,
+  MessageCircle,
+  MapPin,
+  Send,
+  ExternalLink,
+  type LucideIcon,
+} from "lucide-react";
 
 const contactInfo = [
   {
@@ -12,8 +19,8 @@ const contactInfo = [
     href: "mailto:rifathosan01@gmail.com",
   },
   {
-    icon: Phone,
-    label: "Phone",
+    icon: MessageCircle,
+    label: "Whatsapp",
     value: "+8801874499934",
     href: "tel:+8801874499934",
   },

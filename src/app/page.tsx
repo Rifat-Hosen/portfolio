@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -32,6 +33,26 @@ const ActivitiesScene = dynamic(() => import("@/components/ActivitiesScene"), {
 });
 
 export default function Home() {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "development") return;
+
+    const originalWarn = console.warn;
+    console.warn = (...args: unknown[]) => {
+      const first = args[0];
+      if (
+        typeof first === "string" &&
+        first.includes("THREE.THREE.Clock: This module has been deprecated")
+      ) {
+        return;
+      }
+      originalWarn(...args);
+    };
+
+    return () => {
+      console.warn = originalWarn;
+    };
+  }, []);
+
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
       <Navbar />
@@ -56,22 +77,22 @@ export default function Home() {
 
       <div className="section-divider" />
 
-      {/* Education */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <EducationScene />
-        </div>
-        <EducationSection />
-      </div>
-
-      <div className="section-divider" />
-
       {/* Experience */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-25">
           <ExperienceScene />
         </div>
         <ExperienceSection />
+      </div>
+
+      <div className="section-divider" />
+
+      {/* Education */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-25">
+          <EducationScene />
+        </div>
+        <EducationSection />
       </div>
 
       <div className="section-divider" />

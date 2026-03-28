@@ -8,7 +8,7 @@ import {
   FileCode,
   Server,
   Brain,
-  Container,
+  Workflow,
   Puzzle,
   Users,
   BookOpen,
@@ -17,12 +17,43 @@ import {
 } from "lucide-react";
 
 const technicalSkills = [
-  { name: "Next.js", level: 90, icon: Globe },
-  { name: "Flutter/Dart", level: 85, icon: Smartphone },
-  { name: "TypeScript", level: 80, icon: FileCode },
-  { name: "Node.js", level: 70, icon: Server },
-  { name: "Python / ML", level: 55, icon: Brain },
-  { name: "Docker / DevOps", level: 50, icon: Container },
+  {
+    name: "Backend Systems",
+    icon: Server,
+    focus: "Design and ship secure, realtime backend architecture",
+    tools: ["Convex", "Better Auth", "Clerk", "Supabase", "PostgreSQL"],
+  },
+  {
+    name: "Web Engineering",
+    icon: Globe,
+    focus: "Build production-grade web apps with modern React stack",
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    name: "Mobile Development",
+    icon: Smartphone,
+    focus: "Deliver cross-platform mobile experiences with clean architecture",
+    tools: ["Flutter", "Dart", "MVVM", "REST API"],
+  },
+  {
+    name: "Frontend Architecture",
+    icon: FileCode,
+    focus: "Create scalable UI systems with strong DX and accessibility",
+    tools: ["Component Design", "State Management", "Accessibility", "UX"],
+  },
+
+  {
+    name: "AI Integration",
+    icon: Brain,
+    focus: "Integrate AI features into real products and user workflows",
+    tools: ["RAG", "LLM Integration", "FastAPI", "Flowise"],
+  },
+  {
+    name: "Automation & Orchestration",
+    icon: Workflow,
+    focus: "Automate pipelines and orchestrate reliable deployments",
+    tools: ["n8n", "Kubernetes", "GitHub Actions", "Vercel"],
+  },
 ];
 
 const softSkills = [
@@ -30,42 +61,42 @@ const softSkills = [
     name: "Problem Solving",
     icon: Puzzle,
     description:
-      "1000+ competitive programming problems solved across multiple platforms",
+      "Break down complex product requirements into scalable, maintainable solutions with a strong debugging mindset.",
   },
   {
     name: "Team Collaboration",
     icon: Users,
     description:
-      "Experience working in remote and on-site development teams",
+      "Collaborate effectively with cross-functional remote teams across design, engineering, and product.",
   },
   {
     name: "Continuous Learning",
     icon: BookOpen,
     description:
-      "Always expanding skills through courses, certifications and practice",
+      "Continuously upskill through hands-on projects, technical research, and practical experimentation.",
   },
   {
     name: "Communication",
     icon: MessageSquare,
     description:
-      "Clear technical communication with team members and stakeholders",
+      "Communicate technical decisions clearly with stakeholders, aligning business goals with implementation.",
   },
 ];
 
 function TechnicalSkillCard({
   name,
-  level,
+  focus,
+  tools,
   icon: Icon,
   index,
 }: {
   name: string;
-  level: number;
+  focus: string;
+  tools: string[];
   icon: LucideIcon;
   index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const barRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(barRef, { once: true, margin: "-50px" });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
@@ -102,26 +133,25 @@ function TechnicalSkillCard({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
-              <Icon className="w-5 h-5 text-emerald-400" />
-            </div>
-            <span className="text-white font-semibold">{name}</span>
+        <div className="flex items-start gap-3 mb-4">
+          <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+            <Icon className="w-5 h-5 text-emerald-400" />
           </div>
-          <span className="text-emerald-400 text-sm font-medium">
-            {level}%
-          </span>
+          <div>
+            <h4 className="text-white font-semibold">{name}</h4>
+            <p className="text-sm text-slate-300 mt-1">{focus}</p>
+          </div>
         </div>
 
-        {/* Progress bar */}
-        <div ref={barRef} className="bg-slate-700/50 rounded-full h-3 overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-1000 ease-out"
-            style={{
-              width: isInView ? `${level}%` : "0%",
-            }}
-          />
+        <div className="flex flex-wrap gap-2">
+          {tools.map((tool) => (
+            <span
+              key={tool}
+              className="px-2.5 py-1 text-xs rounded-full border border-emerald-500/30 text-emerald-300 bg-emerald-500/10"
+            >
+              {tool}
+            </span>
+          ))}
         </div>
       </div>
     </motion.div>
@@ -172,15 +202,27 @@ function SoftSkillCard({
     >
       <div
         ref={cardRef}
-        className="glass holographic-card p-6 transition-transform duration-200 ease-out"
+        className="glass holographic-card p-6 md:p-7 transition-transform duration-200 ease-out relative overflow-hidden group h-full"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
-          <Icon className="w-6 h-6 text-emerald-400" />
+        <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-emerald-500/10 blur-2xl group-hover:bg-emerald-500/20 transition-colors duration-300" />
+
+        <div className="relative z-10 flex items-start justify-between gap-4 mb-5">
+          <div className="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center border border-emerald-500/30">
+            <Icon className="w-6 h-6 text-emerald-300" />
+          </div>
+          <span className="text-[11px] uppercase tracking-[0.12em] text-emerald-300/90 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded-full">
+            Core Skill
+          </span>
         </div>
-        <h3 className="font-semibold text-white mb-2">{name}</h3>
-        <p className="text-sm text-slate-300 leading-relaxed">{description}</p>
+
+        <div className="relative z-10">
+          <h3 className="font-semibold text-white text-lg mb-2">{name}</h3>
+          <p className="text-sm text-slate-300/95 leading-relaxed">
+            {description}
+          </p>
+        </div>
       </div>
     </motion.div>
   );
@@ -219,7 +261,7 @@ export default function SkillsSection() {
           className="mb-16"
         >
           <h3 className="text-xl font-semibold text-white mb-8 text-center">
-            Technical Skills
+            Technical Stack
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {technicalSkills.map((skill, index) => (
@@ -237,7 +279,7 @@ export default function SkillsSection() {
           <h3 className="text-xl font-semibold text-white mb-8 text-center">
             Soft Skills
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
             {softSkills.map((skill, index) => (
               <SoftSkillCard key={skill.name} {...skill} index={index} />
             ))}

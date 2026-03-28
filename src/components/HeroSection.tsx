@@ -235,7 +235,7 @@ const HeroSection = () => {
           variants={fadeUp}
           className="mt-4 text-xl md:text-2xl text-slate-300"
         >
-          I&apos;m a{" "}
+          I&apos;m {" "}
           <span className="text-emerald-400 font-semibold">{currentText}</span>
           <span className="animate-pulse text-emerald-400 ml-0.5">|</span>
         </motion.p>
