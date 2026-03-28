@@ -68,64 +68,78 @@ export default function Home() {
       <div className="section-divider" />
 
       {/* About */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30">
-          <AboutScene />
+      <div className="mx-4 md:mx-8 lg:mx-10 my-4 section-shell">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-30">
+            <AboutScene />
+          </div>
+          <AboutSection />
         </div>
-        <AboutSection />
       </div>
 
       <div className="section-divider" />
 
       {/* Experience */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <ExperienceScene />
+      <div className="mx-4 md:mx-8 lg:mx-10 my-4 section-shell">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-25">
+            <ExperienceScene />
+          </div>
+          <ExperienceSection />
         </div>
-        <ExperienceSection />
       </div>
 
       <div className="section-divider" />
 
       {/* Education */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <EducationScene />
+      <div className="mx-4 md:mx-8 lg:mx-10 my-4 section-shell">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-25">
+            <EducationScene />
+          </div>
+          <EducationSection />
         </div>
-        <EducationSection />
       </div>
 
       <div className="section-divider" />
 
       {/* Skills */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <SkillsScene />
+      <div className="mx-4 md:mx-8 lg:mx-10 my-4 section-shell">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-20">
+            <SkillsScene />
+          </div>
+          <SkillsSection />
         </div>
-        <SkillsSection />
       </div>
 
       <div className="section-divider" />
 
       {/* Activities */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <ActivitiesScene />
+      <div className="mx-4 md:mx-8 lg:mx-10 my-4 section-shell">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-25">
+            <ActivitiesScene />
+          </div>
+          <ActivitiesSection />
         </div>
-        <ActivitiesSection />
       </div>
 
       <div className="section-divider" />
 
       {/* Contact */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <ContactScene />
+      <div className="mx-4 md:mx-8 lg:mx-10 my-4 section-shell">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-20">
+            <ContactScene />
+          </div>
+          <ContactSection />
         </div>
-        <ContactSection />
       </div>
 
-      <Footer />
+      <div className="mx-4 md:mx-8 lg:mx-10">
+        <Footer />
+      </div>
     </main>
   );
 }
