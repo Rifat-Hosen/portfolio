@@ -62,11 +62,11 @@ function useCountUp(target: number, duration = 2000) {
 function StatCard({ label, value }: { label: string; value: number }) {
   const count = useCountUp(value, 2000);
   return (
-    <div className="glass px-5 py-4 text-center min-w-[120px] md:min-w-[200px] flex-1">
-      <p className="text-2xl md:text-3xl font-bold text-emerald-400">
+    <div className="glass px-4 py-4 text-center min-w-[100px] md:min-w-[140px] flex-1 md:flex-none">
+      <p className="text-xl md:text-2xl font-bold text-emerald-400">
         {formatStat(count)}
       </p>
-      <p className="text-sm text-slate-400 mt-1">{label}</p>
+      <p className="text-xs md:text-sm text-slate-400 mt-1">{label}</p>
     </div>
   );
 }
@@ -254,7 +254,7 @@ const HeroSection = () => {
         {/* Stats */}
         <motion.div
           variants={fadeUp}
-          className="mt-8 flex flex-wrap justify-center gap-3 md:gap-5"
+          className="mt-8 flex flex-wrap md:flex-nowrap justify-center gap-2 md:gap-3"
         >
           {stats.map((stat) => (
             <StatCard key={stat.label} label={stat.label} value={stat.value} />

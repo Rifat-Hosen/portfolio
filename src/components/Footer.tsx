@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <motion.footer
       initial={{ opacity: 0 }}
@@ -11,13 +13,11 @@ const Footer = () => {
       viewport={{ once: true }}
       className="py-8 border-t border-slate-800/50"
     >
-      <div className="text-center">
-        <p className="text-slate-400">
-          &copy; 2025 Rifat Hosen. All rights reserved.
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <p className="text-slate-300 font-medium tracking-wide">
+          &copy; {currentYear} Rifat Hosen. All rights reserved.
         </p>
-        <p className="text-sm text-slate-500 mt-2">
-          Made with &hearts; by Rifat Hosen
-        </p>
+         
       </div>
     </motion.footer>
   );

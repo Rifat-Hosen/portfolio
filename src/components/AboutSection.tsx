@@ -93,15 +93,15 @@ function HighlightCard({
     >
       <div
         ref={cardRef}
-        className="glass holographic-card p-5 text-center transition-transform duration-200 ease-out h-full flex flex-col items-center justify-center"
+        className="glass holographic-card p-3 text-center transition-transform duration-200 ease-out h-full flex flex-col items-center justify-center"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mx-auto">
-          <Icon className="w-6 h-6 text-emerald-400" />
+        <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mx-auto">
+          <Icon className="w-5 h-5 text-emerald-400" />
         </div>
-        <h3 className="font-semibold text-white mt-4">{title}</h3>
-        <p className="text-sm text-slate-400 mt-2">{description}</p>
+        <h3 className="font-semibold text-white mt-3 text-sm">{title}</h3>
+        <p className="text-xs text-slate-400 mt-1.5">{description}</p>
       </div>
     </motion.div>
   );
